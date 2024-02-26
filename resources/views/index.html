@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aboba</title>
+    <link rel="icon" type="image/x-icon" href="logo 1.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=poppins:400,500,600" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<!--Navbar-->
+<nav class="bg-[#302a2d] py-1 flex justify-between items-center px-[120px]">
+    <div class="flex items-center">
+        <img id="logo" src="logo 1.svg" class="w-24 h-auto" style="position: relative;" />
+        <!-- Tambahkan kelas w-24 untuk lebar maksimum 24 dan h-auto agar proporsional -->
+        <h1 id="brand" class="text-white text-2xl my-auto">ABOBA</h1>
+    </div>
+    <ul class="flex gap-[25%] text-white rounded hover:bg-[#000000] hover:text-white">
+        <li><a href="#" onclick="toggleContent()">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+</nav>
+
+<script>
+    function toggleContent() {
+        // Mengubah sumber gambar logo menjadi "babi.png"
+        document.getElementById('logo').src = 'babi.png';
+        // Mengubah teks h1 menjadi "ABABI"
+        document.getElementById('brand').innerText = 'ABABI';
+
+        // Mendapatkan ketinggian acak antara 100px dan 300px
+        let randomHeight = Math.floor(Math.random() * 201) + 100;
+        // Mendapatkan lebar layar
+        let windowWidth = window.innerWidth;
+        // Mendapatkan lebar logo
+        let logoWidth = document.getElementById('logo').offsetWidth;
+
+        // Mengatur posisi logo agar terletak di tengah-tengah horizontal
+        let randomLeft = Math.floor(Math.random() * (windowWidth - logoWidth));
+        document.getElementById('logo').style.left = randomLeft + 'px';
+
+        // Mengatur animasi terbang ke bawah
+        document.getElementById('logo').style.transition = 'top 1s';
+        document.getElementById('logo').style.top = randomHeight + 'px';
+
+        // Setelah 1 detik, kembalikan logo ke posisi awal dan sumber gambar
+        setTimeout(function () {
+            document.getElementById('logo').src = 'logo 1.svg';
+            document.getElementById('brand').innerText = 'ABOBA';
+            document.getElementById('logo').style.top = '0px';
+        }, 1000);
+    }
+</script>
+
+
+
+
+    <!-- About Aboba -->
+    <div class="container py-[80px] flex px-[170px] items-center gap-[5%]">
+        <img src="download 1.png" width="350px" />
+        <p class="text-lg text-center">
+            ABOBA adalah sebuah brand yang menyajikan minuman boba (Bubble
+            Tea) untuk seluruh masyarakat Indonesia. Aboba hadir dengan
+            tujuan membawa kebahagiaan kepada setiap orang yang meminumnya
+            melalui rasa yang khas.
+        </p>
+    </div>
+    <!--Best Seller Menu-->
+    <div class="w-[100%] bg-[#302a2d] py-[20px]">
+        <h1 class="text-center text-lg text-white py-5">
+            Best Seller Menu
+        </h1>
+        <div class="grid grid-cols-4 gap-2 container mx-auto place-items-start">
+            <div>
+                <img class="mx-auto" src="Screenshot (4) 1.png" />
+                <p class="py-2 text-white text-center text-2xl">
+                    Signature Matcha Dalgona
+                </p>
+            </div>
+            <div>
+                <img class="mx-auto" src="Screenshot (7) 1.png" />
+                <p class="py-2 text-white text-center text-2xl">
+                    Salted Caramel Grass Jelly
+                </p>
+            </div>
+            <div>
+                <img class="mx-auto" src="Screenshot (6) 1.png" />
+                <p class="py-2 text-white text-center text-2xl">
+                    Sakura Matcha Dalgona
+                </p>
+            </div>
+            <div>
+                <img class="mx-auto" src="Screenshot (8) 1.png" />
+                <p class="py-2 text-white text-center text-2xl">
+                    Milk Grass Jelly Series
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Contact -->
+    <div class="flex py-[30px] items-center justify-center flex-col gap-[20px]">
+        <h2 class="text-2xl text-center">Contact</h2>
+        <p class="text-center">Please feel free to contact me if you need any further information.<br>
+            Please let me know if you have any questions.</p>
+    </div>
+    <!-- WhatsApp dan Instagram-->
+    <div class="grid grid-cols-2 gap-4 px-[170px] py-12">
+        <div class="w-[400px] h-[150px] bg-[#302A2D] rounded-lg flex items-center pr-5 pl-[70px] gap-4">
+            <img src="Calling.png">
+            <div class="text-white text-center pl-5">
+                <p>WhatsApp</p>
+                <p>+62 813 8052 xxx</p>
+            </div>
+        </div>
+
+        <div class="w-[400px] h-[150px] bg-[#302A2D] rounded-lg flex items-center pr-5 pl-[70px] gap-4">
+            <img src="3 User.png">
+            <div class="text-white text-center pl-5">
+                <p>Instagram</p>
+                <p>@aboba_sumedang</p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="w-full bg-[#302a2d]">
+        <h4 class="text-center text-white py-2">Copyright Aboba 2024</h4>
+    </footer>
+</body>
+
+</html>
